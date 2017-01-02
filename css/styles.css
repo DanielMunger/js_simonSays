@@ -1,0 +1,71 @@
+.red {
+  background-color: red;
+}
+
+.lightred {
+  background-color: pink;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.lightyellow {
+  background-color: lightyellow;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.lightblue {
+  background-color: lightblue;
+}
+
+.green {
+  background-color: green;
+}
+
+.lightgreen {
+  background-color: lightgreen;
+}
+
+#red {
+  height: 200px;
+  width: 200px;
+}
+
+#red:hover {
+  background-color: pink;
+  cursor: pointer;
+}
+
+#yellow{
+  height: 200px;
+  width: 200px;
+}
+
+#yellow:hover {
+  background-color: lightyellow;
+  cursor: pointer;
+}
+
+#blue{
+  height: 200px;
+  width: 200px;
+}
+
+#blue:hover {
+  background-color: lightblue;
+  cursor: pointer;
+}
+
+#green{
+  height: 200px;
+  width: 200px;
+}
+
+#green:hover {
+  background-color: lightgreen;
+  cursor: pointer;
+}
