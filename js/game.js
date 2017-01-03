@@ -22,8 +22,6 @@ Game.prototype.userGuess = function(guess)
     var lastElementIndex = this.userInput.length - 1;
     if (this.userInput.length === this.series.length)
     {
-      console.log(this.userInput.length);
-      console.log(this.series.length);
       if (this.userInput[lastElementIndex] != this.series[lastElementIndex])
       {
         this.gameOver = true;
@@ -32,7 +30,6 @@ Game.prototype.userGuess = function(guess)
       else
       {
         this.userInput = [];
-        console.log(this.userInput + " new series");
         this.incrementSeries();
       }
     }
@@ -42,10 +39,6 @@ Game.prototype.userGuess = function(guess)
       {
         this.gameOver = true;
         this.series = [];
-      }
-      else
-      {
-        console.log(this.userInput + " same series");
       }
     }
   }

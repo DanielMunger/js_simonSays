@@ -1,33 +1,41 @@
 .red {
   background-color: red;
+  border: 5px solid white;
 }
 
-.lightred {
-  background-color: pink;
+.flashred {
+  background-color: darkred;
 }
 
 .yellow {
+  border: 5px solid white;
   background-color: yellow;
 }
 
-.lightyellow {
-  background-color: lightyellow;
+.flashyellow {
+  background-color: darkkhaki;
 }
 
 .blue {
+  border: 5px solid white;
   background-color: blue;
 }
 
-.lightblue {
-  background-color: lightblue;
+.flashblue {
+  background-color: darkblue;
 }
 
 .green {
+  border: 5px solid white;
   background-color: green;
 }
 
-.lightgreen {
-  background-color: lightgreen;
+.flashgreen {
+  background-color: darkgreen;
+}
+
+.pageheader {
+  text-align: center;
 }
 
 #red {
@@ -36,7 +44,7 @@
 }
 
 #red:hover {
-  background-color: pink;
+  border: 5px solid black;
   cursor: pointer;
 }
 
@@ -46,7 +54,7 @@
 }
 
 #yellow:hover {
-  background-color: lightyellow;
+  border: 5px solid black;
   cursor: pointer;
 }
 
@@ -56,7 +64,7 @@
 }
 
 #blue:hover {
-  background-color: lightblue;
+  border: 5px solid black;
   cursor: pointer;
 }
 
@@ -66,6 +74,10 @@
 }
 
 #green:hover {
-  background-color: lightgreen;
+  border: 5px solid black;
   cursor: pointer;
+}
+
+#game-over {
+  display: none;
 }

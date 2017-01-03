@@ -23,8 +23,6 @@ Game.prototype.userGuess = function(guess)
     var lastElementIndex = this.userInput.length - 1;
     if (this.userInput.length === this.series.length)
     {
-      console.log(this.userInput.length);
-      console.log(this.series.length);
       if (this.userInput[lastElementIndex] != this.series[lastElementIndex])
       {
         this.gameOver = true;
@@ -33,7 +31,6 @@ Game.prototype.userGuess = function(guess)
       else
       {
         this.userInput = [];
-        console.log(this.userInput + " new series");
         this.incrementSeries();
       }
     }
@@ -44,10 +41,6 @@ Game.prototype.userGuess = function(guess)
         this.gameOver = true;
         this.series = [];
       }
-      else
-      {
-        console.log(this.userInput + " same series");
-      }
     }
   }
 };
@@ -57,6 +50,7 @@ exports.gameModule = Game;
 },{}],2:[function(require,module,exports){
 var Game = require('./../js/game.js').gameModule;
 var currentGame = new Game();
+var completeCounter = 0;
 
 function userClick(color)
 {
@@ -64,13 +58,28 @@ function userClick(color)
   if (currentGame.gameOver)
   {
     $("#start").show();
+    $("#game-over").show();
   }
   else
   {
-    if (currentGame.userInput.length === currentGame.series.length)
+    if (currentGame.userInput.length === 0)
     {
-      var newColor = "light" + color;
-      $(this).addClass(newColor);
+      completeCounter++;
+      $(".complete").text(completeCounter);
+      console.log(completeCounter);
+      currentGame.series.forEach(function(square, index)
+      {
+        var squareColor = "flash" + square;
+        setTimeout(function()
+        {
+          $("#" + square).addClass(squareColor);
+        }, 500 * index);
+
+        setTimeout(function()
+        {
+          $("#" + square).removeClass(squareColor);
+        }, (500 * (index + 1)) - 100);
+      });
     }
   }
 }
@@ -79,12 +88,21 @@ $(document).ready(function()
 {
   $("#start").click(function()
   {
+    completeCounter = 0;
+    $(".complete").text(completeCounter);
     currentGame = new Game();
     var seriesList = currentGame.incrementSeries();
     $("#start").hide();
-    var square = currentGame.series[0];
-    var squareColor = "light" + square;
-    $("#" + square).addClass(squareColor);
+    $("#game-over").hide();
+    currentGame.series.forEach(function(square)
+    {
+      var squareColor = "flash" + square;
+      $("#" + square).addClass(squareColor);
+      setTimeout(function()
+      {
+        $("#" + square).removeClass(squareColor);
+      }, 500);
+    });
   });
 
   $("#red").click(function()

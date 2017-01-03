@@ -9,18 +9,28 @@
     <title>Simon Says</title>
   </head>
   <body>
-    <button id="start">Start Game</button>
-    <div class="row">
-      <div class="seriesDisplay"></div>
+    <div class="container">
+      <div class="pageheader">
+        <h1>Simon Says</h1>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-6 red" id="red" value="red"></div>
+            <div class="col-md-6 yellow" id="yellow" value="yellow"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 blue" id="blue" value="blue"></div>
+            <div class="col-md-6 green" id="green" value="green"></div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <p>Complete rounds: <span class="complete"></span></p>
+          <button class="btn btn-success" id="start">Start Game</button>
+          <p id="game-over">Game over, you got <span class="complete"></span> rounds correct</p>
+        </div>
+      </div>
     </div>
-    <div class="row">
-      <div class="col-md-6 red" id="red" value="red">red</div>
-      <div class="col-md-6 yellow" id="yellow" value="yellow">yellow</div>
-    </div>
-    <div class="row">
-      <div class="col-md-6 blue" id="blue" value="blue">blue</div>
-      <div class="col-md-6 green" id="green" value="green">green</div>
-    </div>
-
   </body>
 </html>
